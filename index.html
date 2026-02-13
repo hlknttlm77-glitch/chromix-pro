@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- أيقونة المتصفح -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    
+    <!-- ملفات CSS والخطوط -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Chromix Pro - أداة توليد أنظمة الألوان</title>
+</head>
+<body>
+    <!-- ===== الوضع المظلم ===== -->
+    <div class="theme-toggle">
+        <button id="themeBtn" class="theme-btn">
+            <img src="assets/icons/moon.svg" alt="Dark Mode" class="theme-icon" id="themeIcon">
+        </button>
+    </div>
+
+    <!-- ===== الهيدر والشعار ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Chromix Pro Logo" class="logo-img">
+                <h1 class="logo-text">Chromix Pro</h1>
+                <span class="badge">v1.0</span>
+            </div>
+            <p class="subtitle">أداة احترافية لتوليد أنظمة تنسيق الألوان</p>
+        </div>
+    </header>
+
+    <!-- ===== منتقي الألوان الرئيسي ===== -->
+    <main class="main">
+        <div class="container">
+            <div class="color-picker-section">
+                <div class="color-picker-card">
+                    <label for="baseColor" class="color-label">
+                        <img src="assets/icons/color-picker.svg" alt="Color Picker" class="icon">
+                        اختر اللون الأساسي
+                    </label>
+                    <div class="color-input-wrapper">
+                        <input type="color" id="baseColor" value="#6366F1" class="color-input">
+                        <div class="color-hex" id="baseColorHex">#6366F1</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== أزرار التحويل والتنسيقات ===== -->
+            <div class="format-tools">
+                <button class="format-btn active" data-format="hex">
+                    <img src="assets/icons/hex.svg" alt="HEX"> HEX
+                </button>
+                <button class="format-btn" data-format="rgb">
+                    <img src="assets/icons/rgb.svg" alt="RGB"> RGB
+                </button>
+                <button class="format-btn" data-format="hsl">
+                    <img src="assets/icons/hsl.svg" alt="HSL"> HSL
+                </button>
+                <button class="format-btn" data-format="cmyk">
+                    <img src="assets/icons/cmyk.svg" alt="CMYK"> CMYK
+                </button>
+            </div>
+
+            <!-- ===== جميع الأنظمة اللونية ===== -->
+            <div class="schemes-grid" id="colorSchemes">
+                <!-- سيتم تعبئتها بواسطة JavaScript -->
+            </div>
+
+            <!-- ===== شريط الأدوات ===== -->
+            <div class="toolbar">
+                <button id="copyAllBtn" class="tool-btn">
+                    <img src="assets/icons/copy-all.svg" alt="Copy All"> نسخ الكل
+                </button>
+                <button id="exportBtn" class="tool-btn">
+                    <img src="assets/icons/export.svg" alt="Export CSS"> تصدير CSS
+                </button>
+                <button id="invertBtn" class="tool-btn">
+                    <img src="assets/icons/invert.svg" alt="Invert"> عكس الألوان
+                </button>
+                <button id="shareBtn" class="tool-btn">
+                    <img src="assets/icons/share.svg" alt="Share"> مشاركة
+                </button>
+                <button id="qrBtn" class="tool-btn">
+                    <img src="assets/icons/qr.svg" alt="QR Code"> QR
+                </button>
+                <button id="favoritesBtn" class="tool-btn">
+                    <img src="assets/icons/heart.svg" alt="Favorites"> المفضلة
+                </button>
+            </div>
+
+            <!-- ===== تقييم التناسق ===== -->
+            <div class="harmony-score" id="harmonyScore">
+                <!-- سيتم تعبئتها بواسطة JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== النافذة المنبثقة للمفضلة ===== -->
+    <div id="favoritesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <img src="assets/icons/heart-filled.svg" alt="Favorites" class="icon">
+                    الألوان المفضلة
+                </h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="favoritesList"></div>
+        </div>
+    </div>
+
+    <!-- ===== نافذة QR Code ===== -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <img src="assets/icons/qr.svg" alt="QR" class="icon">
+                    رمز QR للوحة الألوان
+                </h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="qrContainer"></div>
+        </div>
+    </div>
+
+    <!-- ملف JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
